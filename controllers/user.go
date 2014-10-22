@@ -16,6 +16,11 @@ import (
 
 func (this *MainController) Login() {
 	this.activeContent("user/login")
+	
+	sess := this.GetSession("acme")
+	if sess != nil {
+		this.Redirect("/home", 302)
+	}
 
 	back := strings.Replace(this.Ctx.Input.Param(":back"), ">", "/", -1) // allow for deeper URL such as l1/l2/l3 represented by l1>l2>l3
 	fmt.Println("back is", back)
@@ -199,7 +204,7 @@ func (this *MainController) Profile() {
 	//******** This page requires login
 	sess := this.GetSession("acme")
 	if sess == nil {
-		this.Redirect("/login/home", 302)
+		this.Redirect("/user/login/home", 302)
 		return
 	}
 	m := sess.(map[string]interface{})
@@ -301,7 +306,7 @@ func (this *MainController) Remove() {
 	//******** This page requires login
 	sess := this.GetSession("acme")
 	if sess == nil {
-		this.Redirect("/login/home", 302)
+		this.Redirect("/user/login/home", 302)
 		return
 	}
 	m := sess.(map[string]interface{})
