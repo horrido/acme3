@@ -16,7 +16,7 @@ import (
 
 func (this *MainController) Login() {
 	this.activeContent("user/login")
-	
+
 	sess := this.GetSession("acme")
 	if sess != nil {
 		this.Redirect("/home", 302)
