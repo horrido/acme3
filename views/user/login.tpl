@@ -17,10 +17,10 @@
 </tr>
 <tr><td>&nbsp;</td></tr>
 <tr>
-    <td>&nbsp;</td><td><input type="submit" value="Login" /></td><td><a href="http://localhost:8080/user/register">Register</a></td>
+    <td>&nbsp;</td><td><input type="submit" value="Login" /></td><td><a href="http://{{.domainname}}/user/register">Register</a></td>
 </tr>
 <tr>
-	<td>&nbsp;</td><td>&nbsp;</td><td><a href="http://localhost:8080/user/forgot">Forgot password?</a></td>
+	<td>&nbsp;</td><td>&nbsp;</td><td><a href="http://{{.domainname}}/user/forgot">Forgot password?</a></td>
 </tr>
 </table>
 </form>
