@@ -146,7 +146,8 @@ func (this *MainController) Register() {
 			return
 		}
 
-		if !sendVerification(u.Email, key.String()) {
+		domainname := this.Data["domainname"]
+		if !sendVerification(u.Email, key.String(), domainname.(string)) {
 			flash.Error("Unable to send verification email")
 			flash.Store(&this.Controller)
 			return
@@ -157,8 +158,8 @@ func (this *MainController) Register() {
 	}
 }
 
-func sendVerification(email, u string) bool {
-	link := "http://localhost:8080/user/verify/" + u
+func sendVerification(email, u string, domainname string) bool {
+	link := "http://" + domainname + "/user/verify/" + u
 	host := "smtp.gmail.com"
 	port := 587
 	msg := gomail.NewMessage()
@@ -408,15 +409,16 @@ func (this *MainController) Forgot() {
 			flash.Store(&this.Controller)
 			return
 		}
-		sendRequestReset(email, u.String())
+		domainname := this.Data["domainname"]
+		sendRequestReset(email, u.String(), domainname.(string))
 		flash.Notice("You've been sent a reset password link. You must check your email.")
 		flash.Store(&this.Controller)
 		this.Redirect("/notice", 302)
 	}
 }
 
-func sendRequestReset(email, u string) bool {
-	link := "http://localhost:8080/user/reset/" + u
+func sendRequestReset(email, u string, domainname string) bool {
+	link := "http://" + domainname + "/user/reset/" + u
 	host := "smtp.gmail.com"
 	port := 587
 	msg := gomail.NewMessage()
