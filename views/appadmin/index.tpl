@@ -33,16 +33,16 @@
 <br>
 </div>
 Total: {{.count}} records – {{.query}} ordered by {{.order}}
-<table border="1">
+<table border="1" style="width:800px">
 <tr>
-<th><a href="http://{{.domainname}}/appadmin/index/{{if eq .order "id"}}-{{end}}id!{{.offset}}!{{.query}}">Id</a></th>
-<th width="100"><a href="http://{{.domainname}}/appadmin/index/{{if eq .order "first"}}-{{end}}first!{{.offset}}!{{.query}}">First</a></th>
-<th width="100"><a href="http://{{.domainname}}/appadmin/index/{{if eq .order "last"}}-{{end}}last!{{.offset}}!{{.query}}">Last</a></th>
-<th width="100"><a href="http://{{.domainname}}/appadmin/index/{{if eq .order "email"}}-{{end}}email!{{.offset}}!{{.query}}">Email</a></th>
-<th width="100">Password</th>
-<th width="100">Reg key</th>
-<th width="100"><a href="http://{{.domainname}}/appadmin/index/{{if eq .order "reg_date"}}-{{end}}reg_date!{{.offset}}!{{.query}}">Reg date</a></th>
-<th width="100">Reset key</th>
+<th style="width:100px"><a href="http://{{.domainname}}/appadmin/index/{{if eq .order "id"}}-{{end}}id!{{.offset}}!{{.query}}">Id</a></th>
+<th style="width:100px"><a href="http://{{.domainname}}/appadmin/index/{{if eq .order "first"}}-{{end}}first!{{.offset}}!{{.query}}">First</a></th>
+<th style="width:100px"><a href="http://{{.domainname}}/appadmin/index/{{if eq .order "last"}}-{{end}}last!{{.offset}}!{{.query}}">Last</a></th>
+<th style="width:100px"><a href="http://{{.domainname}}/appadmin/index/{{if eq .order "email"}}-{{end}}email!{{.offset}}!{{.query}}">Email</a></th>
+<th style="width:100px">Password</th>
+<th style="width:200px">Reg key</th>
+<th style="width:150px"><a href="http://{{.domainname}}/appadmin/index/{{if eq .order "reg_date"}}-{{end}}reg_date!{{.offset}}!{{.query}}">Reg date</a></th>
+<th style="width:100px">Reset key</th>
 </tr>
 {{.Rows}}
 </table>
