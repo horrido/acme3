@@ -57,7 +57,7 @@ Total: {{.count}} records – {{.query}} ordered by {{.order}}
 </div>
 {{end}}
 </div>
- <script>
+<script>
 $(function() {
 $( document ).tooltip();
 });
