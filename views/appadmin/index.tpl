@@ -21,7 +21,9 @@
 	<option value="__gt">&gt;</option>
 	<option value="__gte" selected="selected">&gt;=</option>
 	<option value="__contains">contains</option>
+	<option value="__not__contains">not contains</option>
 	<option value="__icontains">icontains</option>
+	<option value="__not__icontains">not icontains</option>
 </select>
 </td>
 <td> {{if .Errors.Compareval}}{{.Errors.Compareval}}{{end}}<input name="compareval" value="0"
