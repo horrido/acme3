@@ -16,6 +16,7 @@
 </select>
 <select name="compareop">
 	<option value="__exact">=</option>
+	<option value="__not__exact">!=</option>
 	<option value="__lt">&lt;</option>
 	<option value="__lte">&lt;=</option>
 	<option value="__gt">&gt;</option>
