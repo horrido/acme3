@@ -49,7 +49,7 @@ func (this *AdminController) setCompare(query string) (orm.QuerySeter, bool) {
 			this.Data["Errors"] = valid.ErrorsMap
 			return qs, false
 		}
-		if f.Compareop[:5] == "__not" {
+		if len(f.Compareop) >= 5 && f.Compareop[:5] == "__not" {
 			qs = qs.Exclude(f.Comparefield+f.Compareop[5:], f.Compareval)
 		} else {
 			qs = qs.Filter(f.Comparefield+f.Compareop, f.Compareval)
@@ -58,7 +58,7 @@ func (this *AdminController) setCompare(query string) (orm.QuerySeter, bool) {
 	} else {
 		str := strings.Split(query, ",")
 		i := strings.Index(str[0], "__")
-		if str[0][i:i+5] == "__not" {
+		if len(str[0][i:]) >= 5 && str[0][i:i+5] == "__not" {
 			qs = qs.Exclude(str[0][:i]+str[0][i+5:], str[1])
 		} else {
 			qs = qs.Filter(str[0], str[1])
