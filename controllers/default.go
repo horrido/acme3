@@ -15,7 +15,7 @@ func (this *MainController) activeContent(view string) {
 	this.LayoutSections["Header"] = "header.tpl"
 	this.LayoutSections["Sidebar"] = "sidebar.tpl"
 	this.LayoutSections["Footer"] = "footer.tpl"
-	this.TplNames = view + ".tpl"
+	this.TplName = view + ".tpl"
 	this.Data["domainname"] = "localhost:8080"
 	//this.Data["domainname"] = "yourdomainname"
 
